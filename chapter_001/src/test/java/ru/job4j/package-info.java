@@ -1,5 +1,5 @@
 /**
- * Package for calculateTest
+ * Package for calculateTest.
  * @author Anton Listratov (mailto:ant341@yandex.ru)
  * @version $ld$
  * @since 0.1
