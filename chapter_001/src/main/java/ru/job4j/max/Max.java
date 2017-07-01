@@ -1,7 +1,7 @@
 package ru.job4j.max;
 
 /**
- * Class Max äëß ïîèñêà áîëüøåãî ÷èñëà.
+ * Class Max Ð´Ð»Ñ Ð¿Ð¾Ð¸ÑÐºÐ° Ð±Ð¾Ð»ÑŒÑˆÐµÐ³Ð¾ Ñ‡Ð¸ÑÐ»Ð°.
  * @author listratov
  * @since 01.07.2017
  * @version 1
@@ -9,10 +9,10 @@ package ru.job4j.max;
 
 public class Max {
 /**
- * ‚îçâðàùàåò áîëüøåå ÷èñëî.
- * @param first ïåðâûé àðãóìåíò.
- * @param second âòîðîé àðãóìåíò.
- * @return îëüøåå ÷èñëî.
+ * Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ð±Ð¾Ð»ÑŒÑˆÐµÐµ Ñ‡Ð¸ÑÐ»Ð¾.
+ * @param first Ð¿ÐµÑ€Ð²Ñ‹Ð¹ Ð°Ñ€Ð³ÑƒÐ¼ÐµÐ½Ñ‚.
+ * @param second Ð²Ñ‚Ð¾Ñ€Ð¾Ð¹ Ð°Ñ€Ð³ÑƒÐ¼ÐµÐ½Ñ‚.
+ * @return Ð‘Ð¾Ð»ÑŒÑˆÐµÐµ Ñ‡Ð¸ÑÐ»Ð¾.
  */
 	public int max(int first, int second) {
 		return first > second ? first : second;
