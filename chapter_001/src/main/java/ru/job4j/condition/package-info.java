@@ -1,5 +1,5 @@
 /**
- * Package for point task.
+ * Package for point task and triangle task.
  * @author Anton Listratov (mailto:ant341@yandex.ru)
  * @version $Id$
  * @since 0.1
