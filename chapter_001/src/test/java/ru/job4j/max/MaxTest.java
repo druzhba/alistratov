@@ -13,13 +13,23 @@ import static org.junit.Assert.assertThat;
  */
  public class MaxTest {
 /**
- * Test max.
+ * Test max two numbers.
  */
 	@Test
 	public void whenAddOneEqualsTwoThenTwo() {
 		Max m = new Max();
 		int result = m.max(1, 2);
 		int expected = 2;
+		assertThat(result, is(expected));
+	}
+/**
+ * Test max three numbers.
+ */
+	@Test
+	public void whenAddOneEqualsTwoEqualsThreeThenTwo() {
+		Max maxThree = new Max();
+		int result = maxThree.max(1, 2, 3);
+		int expected = 3;
 		assertThat(result, is(expected));
 	}
  }

@@ -9,12 +9,22 @@ package ru.job4j.max;
 
 public class Max {
 /**
- * Возвращает большее число.
+ * Возвращает большее число из двух чисел.
  * @param first первый аргумент.
  * @param second второй аргумент.
  * @return Большее число.
  */
 	public int max(int first, int second) {
 		return first > second ? first : second;
+	}
+/**
+ * Возвращает большее число из трех чисел.
+ * @param first первый аргумент.
+ * @param second второй аргумент.
+ * @param third третий аргумент.
+ * @return большее число.
+ */
+	public int max(int first, int second, int third) {
+		return max(max(first, second), max(second, third));
 	}
 }
