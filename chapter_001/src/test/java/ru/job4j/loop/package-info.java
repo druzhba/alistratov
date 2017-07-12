@@ -1,5 +1,5 @@
 /**
- * Package for counterTest and FactorialTest tasks.
+ * Package for counterTest, FactorialTest, BoardTest tasks.
  * @author Anton Listratov (mailto:ant341@yandex.ru)
  * @version %Id%
  * @since 0.1

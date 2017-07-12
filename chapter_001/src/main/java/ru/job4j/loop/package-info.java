@@ -1,5 +1,5 @@
 /**
- * Package for counter and factorial tasks.
+ * Package for counter, factorial, chess tasks.
  * @author Anton Listratov (mailto:ant341@yandex.ru)
  * @version %Id%
  * @since 0.1
