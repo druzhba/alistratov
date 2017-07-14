@@ -1,5 +1,5 @@
 /**
- * Package for TurnTest.
+ * Package for TurnTest, BubbleSortTest.
  * @author Anton Listratov (mailto:ant341@yandex.ru)
  * @version 1
  * since 14.07.2017
