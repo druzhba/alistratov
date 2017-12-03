@@ -6,7 +6,7 @@ package ru.job4j.condition;
  * @since 01.07.2017
  * @version 1
  */
- public class Point {
+ public class Point2 {
 /**
  * Значение х.
  */
@@ -20,7 +20,7 @@ package ru.job4j.condition;
  * @param x первый аргумент
  * @param y второй аргумент
  */
-	 public Point(int x, int y) {
+	 public Point2(int x, int y) {
 		 this.x = x;
 		 this.y = y;
 	 }
