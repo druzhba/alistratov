@@ -8,13 +8,23 @@ package ru.job4j.condition;
  */
 
 public class Point {
-    private int x;
-    private int y;
-
-    public Point(int x, int y){
-        this.x = x;
-        this.y = y;
-    }
+/**
+ * Значение х.
+ */
+	 private int x;
+/**
+ * Значение y.
+ */
+	 private int y;
+/**
+ * Создание точки.
+ * @param x первый аргумент
+ * @param y второй аргумент
+ */
+	 public Point(int x, int y) {
+		 this.x = x;
+		 this.y = y;
+	 }
     /**
      * Получени точки х.
      * @return значени х
@@ -29,24 +39,25 @@ public class Point {
     public int getY() {
         return this.y;
     }
-
+/**
+ * Расстояние.
+ * @param that первый аргумент
+ * @return result
+ */
     public double distanceTo(Point that) {
-        // Точка А - это текущая точка. К ней мы обращаемся через оператор this.
-        Point a = this;
-        // Точка B - это входящая точка. К ней мы можем обратиться напрямую через имя переменной that.
-        // или для удобства мы создали новую переменную b  и к ней присвоили переменную this.
-        Point b = that;
-
-        int x1 = a.x;
-        int y1 = a.y;
-        int x2 = b.x;
-        int y2 = b.y;
+        int x1 = this.x;
+        int y1 = this.y;
+        int x2 = that.x;
+        int y2 = that.y;
         double result = Math.sqrt(
                 Math.pow(x2 - x2, 2) + Math.pow(y2 - y1, 2)
         );
         return result;
     }
-
+/**
+ * Метод main.
+ * @param args входные параметры
+ */
     public static void main(String[] args) {
         Point a = new Point(0, 1);
         Point b = new Point(2, 5);
