@@ -12,11 +12,11 @@ import java.util.Arrays;
 public class TaskTwo {
     /**
      * Объединяет и сортирует массив.
-     * @param args аргументы.
+     * @param array1 первый массив.
+     * @param array2 второй массив.
+     * @return массив.
      */
-    public static void main(String[] args) {
-        int[] array1 = {1, 2, 3, 4, 5};
-        int[] array2 = {6, 7, 8};
+    public int[] sort(int[] array1, int[] array2) {
         int p = array1.length + array2.length;
         array2 = Arrays.copyOf(array2, p);
         int m = array2.length - array1.length;
@@ -32,9 +32,6 @@ public class TaskTwo {
                 }
             }
         }
-        for (int i : array2) {
-            System.out.println(i);
-        }
-
+        return array2;
     }
 }
