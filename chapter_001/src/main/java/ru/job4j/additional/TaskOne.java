@@ -1,5 +1,5 @@
 package ru.job4j.additional;
-// Задача: отсортировать массив с помощью одного цикла
+// Задача: проверить отсортирован массив или нет
 /**
  * Class TaskOne сортирует массив.
  * @author alistratov
@@ -9,24 +9,17 @@ package ru.job4j.additional;
 public class TaskOne {
     /**
      * Сортирует массив.
-     * @param args аргументы.
+     * @param array массив.
+     * @return результат.
      */
-    public static void main(String[] args) {
-        int[] array = {5, 3, 9, 12, 1};
-        for (int i = array.length - 1; i > 0;) {
-            if (array[i] < array[i - 1]) {
-                int c = array[i];
-                array[i] = array[i - 1];
-                array[i - 1] = c;
-                i = array.length - 1;
-            } else {
-                i--;
+    public boolean isSorted(int[] array) {
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    return false;
+                }
             }
-        }
-        for (int j : array) {
-            System.out.println(j);
-            }
-        }
+         return true;
+    }
 }
 
 
