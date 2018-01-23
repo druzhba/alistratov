@@ -18,25 +18,21 @@ public class Item {
      * Описание заявки.
      */
     private String description;
-    /**
-     * Время создания заявки.
-     */
-    private long create;
 
     /**
      * Создание заявки.
-     * @param name имя заявки
+     *
+     * @param name        имя заявки
      * @param description описание заявки
-     * @param create время создания заявки
      */
-    public Item(String name, String description, long create) {
+    public Item(String name, String description) {
         this.name = name;
         this.description = description;
-        this.create = create;
     }
 
     /**
      * Установка уникального ключа.
+     *
      * @param id ключ
      */
     public void setId(String id) {
@@ -45,6 +41,7 @@ public class Item {
 
     /**
      * Возвращение уникального ключа.
+     *
      * @return уникальный ключ
      */
     public String getId() {
@@ -53,9 +50,19 @@ public class Item {
 
     /**
      * Возвращает имя заявки.
+     *
      * @return имя заявки
      */
     public String getName() {
         return this.name;
+    }
+
+    /**
+     * Возвращает описание заявки.
+     *
+     * @return описание заявки
+     */
+    public String getDescription() {
+        return this.description;
     }
 }

@@ -18,7 +18,7 @@ public class TrackerTest {
 	@Test
 	public void whenAddNewItemThenTrackerHasSameItem() {
 		Tracker tracker = new Tracker();
-		Item item = new Item("test1", "testDescription", 123L);
+		Item item = new Item("test1", "testDescription");
 		tracker.add(item);
 		assertThat(tracker.findAll()[0], is(item));
 	}
@@ -28,9 +28,9 @@ public class TrackerTest {
 	@Test
 	public void whenReplaceNameThenReturnNewName() {
 		Tracker tracker = new Tracker();
-		Item previous = new Item("test1", "testDescription", 123L);
+		Item previous = new Item("test1", "testDescription");
 		tracker.add(previous);
-		Item next = new Item("test2", "testDescription2", 1234L);
+		Item next = new Item("test2", "testDescription2");
 		next.setId(previous.getId());
 		tracker.replace(previous.getId(), next);
 		assertThat(tracker.findById(previous.getId()).getName(), is("test2"));
@@ -41,15 +41,15 @@ public class TrackerTest {
 	@Test
 	public void whenDeleteThrithThenReplaceFourth() {
 		Tracker tracker = new Tracker();
-		Item first = new Item("test1", "testDescription", 123L);
+		Item first = new Item("test1", "testDescription");
 		tracker.add(first);
-		Item second = new Item("test2", "testDescription2", 1234L);
+		Item second = new Item("test2", "testDescription2");
 		tracker.add(second);
-		Item threeDelete = new Item("test3", "testDescription3", 1234L);
+		Item threeDelete = new Item("test3", "testDescription3");
 		tracker.add(threeDelete);
-		Item fourThree = new Item("test4", "testDescription4", 1234L);
+		Item fourThree = new Item("test4", "testDescription4");
 		tracker.add(fourThree);
-		Item five = new Item("test5", "testDescription5", 1234L);
+		Item five = new Item("test5", "testDescription5");
 		tracker.add(five);
 		tracker.delete(threeDelete.getId());
 		assertThat(tracker.findAll()[2].getName(), is("test4"));
@@ -60,11 +60,11 @@ public class TrackerTest {
 	@Test
 	public void whenFindAllThenResultThree() {
 		Tracker tracker = new Tracker();
-		Item first = new Item("test1", "testDescription", 123L);
+		Item first = new Item("test1", "testDescription");
 		tracker.add(first);
-		Item second = new Item("test2", "testDescription2", 1234L);
+		Item second = new Item("test2", "testDescription2");
 		tracker.add(second);
-		Item three = new Item("test3", "testDescription3", 1234L);
+		Item three = new Item("test3", "testDescription3");
 		tracker.add(three);
 		Item[] result = tracker.findAll();
 		assertThat(result.length, is(3));
@@ -75,11 +75,11 @@ public class TrackerTest {
     @Test
     public void whenFindByIdThenResultItemSecond() {
         Tracker tracker = new Tracker();
-        Item first = new Item("test1", "testDescription", 123L);
+        Item first = new Item("test1", "testDescription");
         tracker.add(first);
-        Item second = new Item("test2", "testDescription2", 1234L);
+        Item second = new Item("test2", "testDescription2");
         tracker.add(second);
-        Item three = new Item("test3", "testDescription3", 1234L);
+        Item three = new Item("test3", "testDescription3");
         tracker.add(three);
         Item result = tracker.findById(second.getId());
         assertThat(tracker.findAll()[1], is(result));
@@ -90,15 +90,15 @@ public class TrackerTest {
     @Test
     public void whenFindByNameTest2ThenReturnTwoItem() {
         Tracker tracker = new Tracker();
-        Item first = new Item("test1", "testDescription", 123L);
+        Item first = new Item("test1", "testDescription");
         tracker.add(first);
-        Item second = new Item("test2", "testDescription2", 1234L);
+        Item second = new Item("test2", "testDescription2");
         tracker.add(second);
-        Item three = new Item("test3", "testDescription3", 1234L);
+        Item three = new Item("test3", "testDescription3");
         tracker.add(three);
-        Item four = new Item("test2", "testDescription4", 1234L);
+        Item four = new Item("test2", "testDescription4");
         tracker.add(four);
-        Item five = new Item("test5", "testDescription5", 1234L);
+        Item five = new Item("test5", "testDescription5");
         tracker.add(five);
         Item[] result = tracker.findByName("test2");
         assertThat(second.getName(), is(result[1].getName()));
