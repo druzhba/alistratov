@@ -130,8 +130,8 @@ public class StartUI {
         System.out.println("--------- Поиск заявки по ID ---------");
         String idNumber = this.input.ask("Введите ID заявки : ");
         Item item = this.tracker.findById(idNumber);
-        System.out.println("Заявка ID : " + item.getId() + " Имя : " + item.getName()
-                + " Описание : " + item.getDescription());
+        System.out.println("Заявка ID : " + item.getId() + " Имя заявки : " + item.getName()
+                + " Описание заявки : " + item.getDescription());
     }
     /**
      * Метод реализует поиск по имени.
