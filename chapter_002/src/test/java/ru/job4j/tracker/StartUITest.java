@@ -83,7 +83,7 @@ public class StartUITest {
 		Tracker tracker = new Tracker();
 		Item first = tracker.add(new Item("test1", "testDescription"));
 		Item second = tracker.add(new Item("test2", "testDescription2"));
-		Item three = tracker.add(new Item("test3", "testDescription3"));
+		Item three = tracker.add(new Item("test4", "testDescription4"));
 		Input input = new StubInput(new String[] {String.valueOf(2), String.valueOf(0)});
 		new StartUI(input, tracker).init();
 		Item[] result = tracker.findAll();
