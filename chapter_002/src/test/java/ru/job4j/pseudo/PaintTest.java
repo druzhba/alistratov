@@ -5,6 +5,8 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import org.junit.Before;
+import org.junit.After;
 /**
  * Class PaintTest.
  * @author Anton Listratov
@@ -13,13 +15,34 @@ import java.io.PrintStream;
  */
 public class PaintTest {
     /**
+     * Дефолтный вывод на консоль.
+     */
+    private final PrintStream stdout = System.out;
+    /**
+     * Буфер для результата.
+     */
+    private final ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+    /**
+     * Метод устанавливает вывод в память.
+     */
+    @Before
+    public void loadOutput() {
+        System.setOut(new PrintStream(this.out));
+    }
+    /**
+     * Метод устанавливает стандартный вывод.
+     */
+    @After
+    public void backOutput() {
+        System.setOut(this.stdout);
+        System.out.println("execute after method");
+    }
+    /**
      * Test draw square for class Paint.
      */
     @Test
     public void whenDrawSquare() {
-        PrintStream stdout = System.out;
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
         new Paint().draw(new Square());
         assertThat(new String(out.toByteArray()), is(
                         new StringBuilder()
@@ -29,16 +52,12 @@ public class PaintTest {
                                 .append("++++")
                                 .append(System.lineSeparator())
                                 .toString()));
-        System.setOut(stdout);
     }
     /**
      * Test draw triangle for class Paint.
      */
     @Test
     public void whenDrawTriangle() {
-        PrintStream stdout = System.out;
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
         new Paint().draw(new Triangle());
         assertThat(new String(out.toByteArray()), is(
                 new StringBuilder()
@@ -48,6 +67,5 @@ public class PaintTest {
                         .append("+++++++")
                         .append(System.lineSeparator())
                         .toString()));
-        System.setOut(stdout);
     }
 }
