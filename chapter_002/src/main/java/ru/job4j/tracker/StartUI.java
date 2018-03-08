@@ -57,26 +57,38 @@ public class StartUI {
      * Основной цикл программы.
      */
     public void init() {
-        boolean exit = true;
-        while (exit) {
-            this.showMenu();
-            String answer = this.input.ask("Введите пункт меню : ");
-            if (ADD == Integer.valueOf(answer)) {
-                this.createItem();
-            } else if (SHOW == Integer.valueOf(answer)) {
-                this.showAll();
-            } else if (EDIT == Integer.valueOf(answer)) {
-                this.edit();
-            } else if (DELETE == Integer.valueOf(answer)) {
-                this.del();
-            } else if (FINDID == Integer.valueOf(answer)) {
-                this.findId();
-            } else if (FINDNAME == Integer.valueOf(answer)) {
-                this.findName();
-            } else if (EXIT == Integer.valueOf(answer)) {
-                exit = false;
+        //Tracker tracker = new Tracker();
+        MenuTracker menu = new MenuTracker(input, tracker);
+        menu.fillActions();
+        do {
+            menu.show();
+            int key = Integer.valueOf(input.ask("select : "));
+            if (key == 0) {
+                break;
+            } else {
+                menu.select(key);
             }
-        }
+        } while (!"y".equals(this.input.ask("Exit? y")));
+//        boolean exit = true;
+//        while (exit) {
+//            this.showMenu();
+//            String answer = this.input.ask("Введите пункт меню : ");
+//            if (ADD == Integer.valueOf(answer)) {
+//                this.createItem();
+//            } else if (SHOW == Integer.valueOf(answer)) {
+//                this.showAll();
+//            } else if (EDIT == Integer.valueOf(answer)) {
+//                this.edit();
+//            } else if (DELETE == Integer.valueOf(answer)) {
+//                this.del();
+//            } else if (FINDID == Integer.valueOf(answer)) {
+//                this.findId();
+//            } else if (FINDNAME == Integer.valueOf(answer)) {
+//                this.findName();
+//            } else if (EXIT == Integer.valueOf(answer)) {
+//                exit = false;
+//            }
+//        }
     }
     /**
      * Метод реализует добавление новой заявки в хранилище.
@@ -164,6 +176,8 @@ public class StartUI {
      * @param args аргументы
      */
     public static void main(String[] args) {
-        new StartUI(new ConsoleInput(), new Tracker()).init();
+        Input input = new ConsoleInput();
+        Tracker tracker = new Tracker();
+        new StartUI(input, tracker).init();
     }
 }

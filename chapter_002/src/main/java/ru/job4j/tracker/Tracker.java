@@ -22,7 +22,6 @@ public class Tracker {
      * Генератор случайного числа.
      */
     private static final Random RN = new Random();
-
     /**
      * Метод реализирующий добавление заявки в хранилеще.
      * @param item новая заявка
@@ -50,6 +49,19 @@ public class Tracker {
         for (int j = 0; j != this.position; j++) {
             if (this.items[j] != null && this.items[j].getId().equals(id)) {
                 this.items[j] = item;
+                break;
+            }
+        }
+    }
+    /**
+     * Метод заменяет одну заявку на другую.
+     * @param fresh новая заявка
+     */
+    public void edit(Item fresh) {
+        for (int j = 0; j != items.length; j++) {
+            Item item = items[j];
+            if (item != null && item.getId().equals(fresh.getId())) {
+                this.items[j] = fresh;
                 break;
             }
         }
