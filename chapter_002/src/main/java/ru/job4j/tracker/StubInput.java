@@ -9,7 +9,7 @@ public class StubInput implements Input {
 	/**
 	 * Последовательность ответов пользователя.
 	 */
-	private final String[] value;
+	private final String[] answer;
 	/**
 	 * Считает количество вызовов методом ask.
 	 */
@@ -17,10 +17,10 @@ public class StubInput implements Input {
 
 	/**
 	 * Конструктор.
-	 * @param value последовательность ответов
+	 * @param answer последовательность ответов
 	 */
-	public StubInput(final String[] value) {
-		this.value = value;
+	public StubInput(String[] answer) {
+		this.answer = answer;
 	}
 
 	/**
@@ -30,6 +30,16 @@ public class StubInput implements Input {
 	 */
 	@Override
 	public String ask(String question) {
-		return this.value[this.position++];
+		return this.answer[this.position++];
+	}
+
+	/**
+	 * Метод.
+	 * @param question вопрос
+	 * @param range промежуток
+	 * @return ответ
+	 */
+	public int ask(String question, int[] range) {
+		return -1;
 	}
 }

@@ -9,9 +9,16 @@ package ru.job4j.tracker;
 
 public interface Input {
     /**
-     * Метод.
+     * Метод ask.
      * @param question вопрос
      * @return ответ
      */
     String ask(String question);
+    /**
+     * Метод ask.
+     * @param question вопрос
+     * @param range промежуток
+     * @return ответ
+     */
+    int ask(String question, int[] range);
 }

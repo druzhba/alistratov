@@ -44,7 +44,11 @@ public class StartUI {
  * Хранилище заявок.
  */
     private static Tracker tracker;
-/**
+    /**
+     * Промежуток.
+     */
+    private int[] ranges = new int[] {1, 2, 3, 4};
+    /**
  * Конструктор инициализирующий поля.
  * @param input ввод данных
  * @param tracker хранилище заявок
@@ -62,12 +66,11 @@ public class StartUI {
         menu.fillActions();
         do {
             menu.show();
-            int key = Integer.valueOf(input.ask("select : "));
-            if (key == 0) {
-                break;
-            } else {
-                menu.select(key);
-            }
+//            int key = Integer.valueOf(input.ask("select : "));
+//            if (key == 0) {
+//                break;
+//            } else {
+                menu.select(input.ask("select: ", ranges));
         } while (!"y".equals(this.input.ask("Exit? y")));
 //        boolean exit = true;
 //        while (exit) {
@@ -176,7 +179,7 @@ public class StartUI {
      * @param args аргументы
      */
     public static void main(String[] args) {
-        Input input = new ConsoleInput();
+        Input input = new ValidateInput();
         Tracker tracker = new Tracker();
         new StartUI(input, tracker).init();
     }
