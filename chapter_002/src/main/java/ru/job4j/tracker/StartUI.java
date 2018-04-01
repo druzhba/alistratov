@@ -179,8 +179,8 @@ public class StartUI {
      * @param args аргументы
      */
     public static void main(String[] args) {
-        Input input = new ValidateInput();
-        Tracker tracker = new Tracker();
-        new StartUI(input, tracker).init();
+//        Input input = new ValidateInput();
+//        Tracker tracker = new Tracker();
+        new StartUI(new ValidateInput(new ConsoleInput()), new Tracker()).init();
     }
 }

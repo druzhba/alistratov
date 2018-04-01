@@ -6,7 +6,27 @@ package ru.job4j.tracker;
  * @since 20.03.2018
  * @version 1
  */
-public class ValidateInput extends ConsoleInput {
+public class ValidateInput implements Input {
+    /**
+     * Источник данных.
+     */
+    private final Input input;
+    /**
+     * Конструктор.
+     * @param input источник данных
+     */
+    public ValidateInput(final Input input) {
+        this.input = input;
+    }
+    /**
+     * Метод ask.
+     * @param question вопрос
+     * @return ответ
+     */
+    @Override
+    public String ask(String question) {
+        return this.input.ask(question);
+    }
     /**
      * Метод ask.
      * @param question вопрос
@@ -18,7 +38,7 @@ public class ValidateInput extends ConsoleInput {
         int value = -1;
         do {
             try {
-                value = super.ask(question, range);
+                value = this.input.ask(question, range);
                 invalid = false;
             } catch (MenuOutException moe) {
                 System.out.println("Please select key from menu.");
